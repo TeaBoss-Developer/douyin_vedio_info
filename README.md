@@ -1,6 +1,10 @@
 # douyin_vedio_info
 Get the information of the Douyin vedio through the Douyin web page
 
+通过抖音网页版获取视频直链信息
+
+无水印解析抖音视频
+
 DouyinVedio.py文件里,有以下几个函数.
 
 Get_Header
