@@ -22,7 +22,7 @@ def Get_Vedio_ID(url):
     return(str(requests.get(url=url,headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"}, allow_redirects=False).text).split("share/video/")[1].split('/')[0])
 def Get_Vedio_Json(VID):
     result=requests.get("https://www.douyin.com/user/self?modal_id="+VID,headers=Get_Header(),allow_redirects=False)
-    return(urllib.parse.unquote(result.text.split('RENDER_DATA\" type=\"application/json\">')[1].split("</script><script type=\"text/javascript\" async=\"\"")[0], encoding='utf-8', errors='replace'))
+    return(urllib.parse.unquote(result.text.split('RENDER_DATA\" type=\"application/json\">')[1].split("</script>")[0], encoding='utf-8', errors='replace'))
 def Get_Vedio_Info(string):
     ss = json.loads(Get_Vedio_Json(Get_Vedio_ID(Rexp_get_httpURL(string))))
     title=ss['app']['videoDetail']['desc']
